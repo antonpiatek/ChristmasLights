@@ -23,8 +23,7 @@ unsigned int div2 = 0;
 int button_state = 1;
 
 void setup() {                
-  //start the SPI for the WAS2801 string, default is 4MHz
-  FastLED.addLeds<WS2801>(leds,NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, 11>(leds,NUM_LEDS);
 
   //Mode button
   pinMode(BUTTON_PIN, INPUT_PULLUP);
