@@ -1,12 +1,9 @@
-#include <FastSPI_LED.h>
-
-// Sometimes chipsets wire in a backwards sort of way
-//struct CRGB { unsigned char b; unsigned char r; unsigned char g; };
-struct CRGB { unsigned char r; unsigned char g; unsigned char b; };
-struct CRGB *leds;
+#include "FastLED.h"
 
 #include "colours.h"
 #include "configuration.h"
+
+CRGB leds[NUM_LEDS];
 
 /* The function to move the pattens up 1 and enable/disable
 cycle mode at the end. */
@@ -27,16 +24,8 @@ int button_state = 1;
 
 void setup() {                
   //start the SPI for the WAS2801 string, default is 4MHz
-  FastSPI_LED.setLeds(NUM_LEDS);
-  FastSPI_LED.setChipset(CFastSPI_LED::SPI_WS2801);
+  FastLED.addLeds<WS2801>(leds,NUM_LEDS);
 
-  //FastSPI_LED.setPin(PIN);
-  FastSPI_LED.setDataRate(2);
-  FastSPI_LED.init();
-  FastSPI_LED.start();
-
-  leds = (struct CRGB*)FastSPI_LED.getRGBData();
-  
   //Mode button
   pinMode(BUTTON_PIN, INPUT_PULLUP);
  
