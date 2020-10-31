@@ -5,7 +5,7 @@ this file too... :-) */
 /* MSP430 only, remember to set your MCU in the Makefile */
 
 /* Number of LEDs in the string, up to 255 */
-#define NUM_LEDS	50
+#define NUM_LEDS	100
 
 /* Pin for mode button on MSP430 */
 #define BUTTON_PIN      3       //P1.3 (S2 on launchpad)
