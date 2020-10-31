@@ -11,7 +11,7 @@ this file too... :-) */
 #define BUTTON_PIN      3       //P1.3 (S2 on launchpad)
 /* Pin for mode button on arduino */
 #ifdef ARDUINO
-#define BUTTON_PIN      7
+#define BUTTON_PIN      3
 #endif
 
 #ifndef ARDUINO
